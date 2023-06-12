@@ -1,0 +1,43 @@
+.buttons {
+  position: absolute;
+  height: 3.5rem;
+  width: 30rem;
+  background-color: rgba(240, 248, 255, 0.404);
+  top: 0;
+  transform: translateX(34vw);
+  border-end-start-radius: 15rem;
+  border-end-end-radius: 15rem;
+  display: flex;
+  justify-content:center;
+  align-items: flex-end;
+  z-index: 2;
+}
+
+.buttons button {
+  margin-bottom: 0.1rem;
+  border: none;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+  color: rgb(0, 0, 0);
+  border-radius: 0.3rem;
+  height: 1.50rem;
+  margin-left: 0.1rem;
+  background-color: rgba(240, 248, 255, 0.479);
+}
+
+.buttons select {
+  margin-bottom: 0.1rem;
+  border: none;
+  border-radius: 0.3rem;
+  height: 1.5rem;
+  background-color: rgba(240, 248, 255, 0.479);
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+  color: rgb(0, 0, 0);
+}
+
+.cards {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 4.5vw;
+  }

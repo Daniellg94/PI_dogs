@@ -38,7 +38,7 @@ const GetDogsName = async (req, res) => {
                 weight: dog.weight.metric,
                 life_span: dog.life_span,
                 temperament: dog.temperament,
-                imageId: imageData
+                image: imageData
               };
             })
           );

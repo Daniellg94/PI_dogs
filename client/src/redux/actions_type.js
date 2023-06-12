@@ -1,2 +1,7 @@
 export const GETDOGS = "GETDOGS"
 export const DETDOGS = "DETDOGS"
+export const SEARCH_DOG = "SEARCH_DOG"
+export const ORDER_DOG = "ORDER_DOG"
+export const ORDER_WE = "ORDER_WE"
+export const GET_TEMP = "GET_TEMP"
+export const FILT_DOGS = "FILT_DOGS"

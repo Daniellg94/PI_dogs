@@ -1,10 +1,13 @@
-import { DETDOGS, GETDOGS } from "./actions_type"
+import { DETDOGS, FILT_DOGS, GETDOGS, GET_TEMP, ORDER_DOG, ORDER_WE, SEARCH_DOG } from "./actions_type"
 import axios from "axios"
 
 const URL = "http://localhost:3001/dogs"
 
+let variable = true
+
 export const getdogs = () =>{
 
+    if (variable=== true)
     return async (dispatch) =>{
         const apiData = await axios(URL)
         const data = apiData.data
@@ -14,11 +17,17 @@ export const getdogs = () =>{
                 payload:data
             }
         )
-
+    }
+    else{
+        variable = true
+        return{
+            type:"default",
+        }
     }
 }
 
 export const detdogs = (id) =>{
+    if(id===undefined) return {type:DETDOGS, payload:[]}
     return async (dispatch) =>{
         const apiData =await axios(`${URL}/${id}`)
         const data = apiData.data
@@ -29,4 +38,50 @@ export const detdogs = (id) =>{
             }
         )
     }
+}
+
+export const Searchdogs = (name) => {
+    
+    return async(dispatch) =>{
+        try {
+            variable = false
+            const search = await axios (`${URL}/name?name=${name}`)
+            const data = search.data
+            return dispatch(
+                {
+                    type:SEARCH_DOG,
+                    payload:data
+                }
+            )
+            
+        } catch (error) {
+            console.log("problemas en el search")
+        }
+    }
+}
+
+export const getTemp = () => {
+
+    return async(dispatch) =>{
+        const temps = await axios (`http://localhost:3001/temperaments`)
+        const data= temps.data
+        return dispatch(
+            {
+                type:GET_TEMP,
+                payload:data
+            }
+        )
+    }
+}
+
+export const orderDog= (order) =>{
+    return {type:ORDER_DOG, payload:order}
+}
+
+export const orderWeight = (order) =>{
+    return {type: ORDER_WE, payload:order}
+}
+
+export const filtDogs = (filter) =>{
+    return {type:FILT_DOGS, payload:filter}
 }

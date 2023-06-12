@@ -40,11 +40,11 @@ const GetDogsID = async(req,res) =>{
     const apidog ={
         id: data.id,
         name: data.name,
-        height: data.height,
-        weight: data.weight,
+        height: data.height.metric,
+        weight: data.weight.metric,
         life_span: data.life_span,
         temperament: data.temperament,
-        imageId: imageData.url
+        image: imageData.url
     
     }
 

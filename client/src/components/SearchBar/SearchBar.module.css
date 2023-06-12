@@ -1,0 +1,35 @@
+.search{
+    background-color: rgba(240, 248, 255, 0.438);
+    width: 22rem;
+    height: 100%;
+    border-bottom-left-radius: 15rem;
+    position: absolute;
+    right: 0%;
+    
+}
+
+
+.search input{
+    position: absolute;
+    height: 100%;
+    width: 15rem;
+    border: none;
+    border-end-start-radius: 15px;
+    padding-left: 10px;
+    right: 4rem;
+}
+
+.search button{
+    position: absolute;
+    height: 100%;
+    width: 4rem;
+    right: 0;
+    border: none;
+    background-color: rgba(185, 185, 185, 0.336);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+  color: rgb(0, 0, 0);
+}
+
+.search:hover button{
+    background-color: rgba(7, 136, 250, 0.699);
+}

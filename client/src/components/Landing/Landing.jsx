@@ -1,19 +1,11 @@
-import { useEffect } from "react"
-import { useDispatch } from "react-redux"
 import { Link } from "react-router-dom"
-import { getdogs } from "../../redux/actions"
+import styles from "./Landing.module.css"
 
 const Landing = () => {
 
-    const dispach = useDispatch()
-    
-    useEffect(()=>{
-        dispach(getdogs())
-    },[])
-
     return(
-     <div><h1>Landing</h1>
-     <Link to="/dogs"><button>DOGS</button></Link>
+     <div className={styles.landing}>
+     <Link to="/dogs"><button>WELCOME TO DOGS</button></Link>
      </div>
      
     )

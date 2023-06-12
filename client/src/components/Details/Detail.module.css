@@ -1,0 +1,66 @@
+.loading{
+    color: white;
+    position: absolute;
+    top:10rem;
+    left: 30vw;
+  }
+  
+  .loading img{
+    width: 30rem;
+    height: 30rem;
+  }
+
+  .image{
+    position: absolute;
+    top: 20vh;
+    left: 5vw;
+    background-color: antiquewhite;
+    height: 45vh;
+    width: 35vw;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.788), 0 0 5px rgba(253, 255, 253, 0.788);
+  }
+  .image footer{
+    padding: 0 1.5rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 93%;
+    background: hsla(0, 8%, 21%, 0.5);
+    backdrop-filter: blur(var(--blur));
+    gap: 0.5ch;
+    height: relative;
+    justify-content: space-evenly;
+    align-content: center;
+    color: rgb(255, 255, 255);
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    line-height:0.25;
+    transition: height 1.0s;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.788), 0 0 5px rgba(253, 255, 253, 0.788);
+  }
+
+  .image img{
+    width: 35vw;
+    height: 45vh;
+  }
+
+  .params{
+    position: absolute;
+    background-color: rgba(140, 153, 165, 0.404);
+    left: 60vw;
+    top: 20vh;
+    width: 15rem;
+    border-radius: 1rem;
+    color: white;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.788), 0 0 5px rgba(253, 255, 253, 0.788);
+  }
+
+  .dates{
+    position: absolute;
+    background-color: rgba(140, 153, 165, 0.404);
+    left: 48vw;
+    top: 40vh;
+    width: 45rem;
+    border-radius: 1rem;
+    color: white;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.788), 0 0 5px rgba(253, 255, 253, 0.788);
+  }
