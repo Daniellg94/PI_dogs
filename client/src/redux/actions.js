@@ -1,4 +1,4 @@
-import { DETDOGS, FILT_DOGS, GETDOGS, GET_TEMP, ORDER_DOG, ORDER_WE, SEARCH_DOG } from "./actions_type"
+import { DELETE, DETDOGS, FILT_API, FILT_DOGS, GETDOGS, GET_TEMP, ORDER_DOG, ORDER_WE, SEARCH_DOG } from "./actions_type"
 import axios from "axios"
 
 const URL = "http://localhost:3001/dogs"
@@ -74,6 +74,7 @@ export const getTemp = () => {
     }
 }
 
+
 export const orderDog= (order) =>{
     return {type:ORDER_DOG, payload:order}
 }
@@ -84,4 +85,12 @@ export const orderWeight = (order) =>{
 
 export const filtDogs = (filter) =>{
     return {type:FILT_DOGS, payload:filter}
+}
+
+export const filtapi = (filter) =>{
+    return {type:FILT_API, payload:filter}
+}
+
+export const deleter = (id) =>{
+    return {type:DELETE, payload:id}
 }

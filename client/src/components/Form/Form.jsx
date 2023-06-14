@@ -65,7 +65,6 @@ const Form = () => {
               ...prevState,
               weight: weight,
             }));
-          } else {
           }
           if (newDog.minlife_span && newDog.maxlife_span) {
             const life_span = ` ${newDog.minlife_span} - ${newDog.maxlife_span} years`;
@@ -74,12 +73,12 @@ const Form = () => {
               life_span: life_span,
             }));
           }
-         /* setNewDog((prevState) => ({
-            ...prevState,
-            weight:"",
-            height:"",
-            life_span:""
-          }));*/
+          if (!newDog.minheight && !newDog.maxheight) {
+            setNewDog((prevState) => ({
+              ...prevState,
+              height: "",
+            }));
+          }
       }, [newDog.minheight, newDog.maxheight, newDog.minweight, newDog.maxweight, newDog.minlife_span, newDog.maxlife_span]);
 
     const handlerchange = (event) =>{
@@ -96,7 +95,7 @@ const Form = () => {
     }
     const handlerRatings = (event) =>{
         const rating = parseFloat(event.target.value)
-        if (!isNaN(rating) && rating >= 0){
+        if (!isNaN(rating) && rating > 0){
             setNewDog({
                 ...newDog,
                 [event.target.name]: event.target.value,
@@ -123,7 +122,7 @@ const Form = () => {
         setErrors(
             Validations({
                 ...newDog,
-                [event.target.name]: event.target.value,
+                temperament:[...newDog.temperament,selectedTemperament]
             })
         )
     }
@@ -187,24 +186,24 @@ const Form = () => {
             <br />
             <label htmlFor="height">height in cm</label>
             <div className={styles.height}>
-            <input type="number" name="minheight" placeholder="min" value={newDog.minheight} onChange={handlerRatings}/>-
-            <input type="number" name="maxheight" placeholder="max" value={newDog.maxheight} onChange={handlerRatings}/>
+            <input step={1} type="number" name="minheight" placeholder="min" value={newDog.minheight} onChange={handlerRatings}/>-
+            <input step={1} type="number" name="maxheight" placeholder="max" value={newDog.maxheight} onChange={handlerRatings}/>
             </div>
             <div className={styles.error} >{errors.height && <p>{errors.height}</p>}</div>
             <br />
             <label htmlFor="text">weight in kg</label>
             <div className={styles.weight}>
-            <input type="number" name="minweight" placeholder="min" value={newDog.minweight} onChange={handlerRatings}/>
+            <input step={1} type="number" name="minweight" placeholder="min" value={newDog.minweight} onChange={handlerRatings}/>
             -
-            <input type="number" name="maxweight" placeholder="max" value={newDog.maxweight} onChange={handlerRatings}/>
+            <input step={1} type="number" name="maxweight" placeholder="max" value={newDog.maxweight} onChange={handlerRatings}/>
             </div>
             <div className={styles.error}>{errors.weight && <p>{errors.weight}</p>}</div>
             <br />
             <label htmlFor="text">life span</label>
             <div className={styles.life_span}>
-            <input type="number" name="minlife_span" placeholder="min" value={newDog.minlife_span} onChange={handlerRatings}/>
+            <input step={1} type="number" name="minlife_span" placeholder="min" value={newDog.minlife_span} onChange={handlerRatings}/>
             -
-            <input type="number" name="maxlife_span" placeholder="max" value={newDog.maxlife_span} onChange={handlerRatings}/>
+            <input step={1} type="number" name="maxlife_span" placeholder="max" value={newDog.maxlife_span} onChange={handlerRatings}/>
             </div >
             <div className={styles.error}>{errors.life_span && <p>{errors.life_span}</p>}</div>
             <br />
@@ -228,7 +227,7 @@ const Form = () => {
             <input type="text" name="image" value={newDog.image} onChange={handlerchange} />
             <div className={styles.error}>{errors.image && <p>{errors.image}</p>}</div>
             <br />
-            <button type="submit" disabled={Object.keys(errors).length > 0} className={styles.send}> send dog</button>
+            <button type="submit" disabled={errors.name||errors.height||errors.weight||errors.life_span||errors.image||errors.temperament||newDog.temperament.length === 0} className={styles.send}> send dog</button>
         </form>
 
         {showPopup && (

@@ -45,6 +45,7 @@ const Detail = () => {
       <h3>{dogsid.life_span}</h3>
       <label htmlFor=""><h3>temperaments:</h3></label>
       <h3> {dogsid.temperament}</h3>
+      <h4>{dogsid.id}</h4>
       </div>
     </div>
   );

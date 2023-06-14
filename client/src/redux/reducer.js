@@ -1,5 +1,7 @@
 import {
+  DELETE,
   DETDOGS,
+  FILT_API,
   FILT_DOGS,
   GETDOGS,
   GET_TEMP,
@@ -72,6 +74,29 @@ const reducer = (state = initialState, action) => {
         ...state,
         filterDogs: filtDogs,
       };
+
+      case FILT_API:
+        const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+        const filterapidogs = state.getDogs.filter((dog) => {
+          if (uuidRegex.test(action.payload)) {
+            return uuidRegex.test(dog.id);
+          } else {
+            return !uuidRegex.test(dog.id);
+          }
+        });
+        return {
+          ...state,
+          filterDogs: filterapidogs
+        };
+
+        case DELETE:
+          const dogs = state.getDogs.filter((dog)=>dog.id !== action.payload)
+          const fildog = state.filterDogs.filter((dog)=>dog.id !== action.payload)
+          return{
+            ...state,
+            filterDogs:fildog,
+            getDogs:dogs
+          }
 
     default:
       return { ...state };

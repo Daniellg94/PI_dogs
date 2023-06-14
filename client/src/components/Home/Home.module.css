@@ -1,7 +1,7 @@
 .buttons {
   position: absolute;
   height: 3.5rem;
-  width: 30rem;
+  width: 35rem;
   background-color: rgba(240, 248, 255, 0.404);
   top: 0;
   transform: translateX(34vw);

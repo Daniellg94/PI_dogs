@@ -36,7 +36,6 @@ const GetDogs = async(req,res) =>{
 
     if(!dogs.data)
     return res.status(400).json({error:"perros perdidos 😭"})
-    console.log(allDogs)
 
     return res.status(200).json(allDogs)
 

@@ -53,6 +53,16 @@
     transform: scale(1);
   }
 
+.card button{
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    background-color: rgba(153, 51, 93, 0.658);
+    border: none;
+    border-radius: 0.3rem;
+    z-index: 1;
+}
+
 .pe{
     line-height:1.0;
 }
