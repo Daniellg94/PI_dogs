@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9a6febdb.css",
+    "main.js": "/static/js/main.2c606010.js",
+    "static/js/787.c4e7f8f9.chunk.js": "/static/js/787.c4e7f8f9.chunk.js",
+    "static/media/5.gif": "/static/media/5.f0010c23b10a05ff88ff.gif",
+    "static/media/4.gif": "/static/media/4.3b8fca86c9ad8181e928.gif",
+    "static/media/6.gif": "/static/media/6.2c3ef90b25f6a0da4f22.gif",
+    "static/media/1.gif": "/static/media/1.7e09427c237018b56dd9.gif",
+    "static/media/lobo.webp": "/static/media/lobo.831dd5055ea226c7ddff.webp",
+    "static/media/2.gif": "/static/media/2.a57b19a4549dd5df4372.gif",
+    "static/media/3.gif": "/static/media/3.7009ea8876ca52df9ca8.gif",
+    "static/media/lobo.png": "/static/media/lobo.7bff412e06d6c31bb90f.png",
+    "static/media/perro.png": "/static/media/perro.0c780046b009b944acf0.png",
+    "static/media/pata.png": "/static/media/pata.2c3cdc081730018ab725.png",
+    "static/media/perro.jpg": "/static/media/perro.bffae251d29734366171.jpg",
+    "static/media/Dog.png": "/static/media/Dog.e12c2b5c52b894d37b9b.png",
+    "static/media/Bone.png": "/static/media/Bone.a91d0d9b8d1255e17100.png",
+    "index.html": "/index.html",
+    "main.9a6febdb.css.map": "/static/css/main.9a6febdb.css.map",
+    "main.2c606010.js.map": "/static/js/main.2c606010.js.map",
+    "787.c4e7f8f9.chunk.js.map": "/static/js/787.c4e7f8f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9a6febdb.css",
+    "static/js/main.2c606010.js"
+  ]
+}
