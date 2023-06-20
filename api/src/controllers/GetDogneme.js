@@ -34,8 +34,8 @@ const GetDogsName = async (req, res) => {
               return {
                 id: dog.id,
                 name: dog.name,
-                height: dog.height.metric,
-                weight: dog.weight.metric,
+                height: dog.height,
+                weight: dog.weight,
                 life_span: dog.life_span,
                 temperament: dog.temperament,
                 image: imageData

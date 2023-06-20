@@ -1,0 +1,137 @@
+.button{
+    align-items: center;
+    justify-content: center;
+}
+.button button{
+    position: absolute;
+    border: none;
+    background-color: rgba(173, 173, 173, 0.541);
+    border-radius: 0.5rem;
+    width: 8rem;
+    height: 2rem;
+    top: 1rem;
+    right: 46%;
+    box-shadow: 0 0 10px rgba(228, 228, 228, 0.788), 0 0 1px rgb(255, 255, 255);
+}
+
+.button img{
+    width: 2rem;
+}
+
+.Form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    background-color: rgba(109, 109, 109, 0.486);
+    border-radius: 2rem;
+    width: 35vw;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 0 10px rgba(228, 228, 228, 0.788), 0 0 1px rgb(255, 255, 255);
+    left: 33%;
+  }
+  .Form input {
+    display: inline-block;
+    border: none;
+    border-radius: 0.5rem;
+    height: 1.5rem;
+    margin: 0.5rem 0.2rem; /* Ajusta el margen según tu preferencia */
+    align-items: center;
+    background-color: rgba(105, 172, 230, 0.521);
+    box-shadow: 0 0 10px rgba(228, 228, 228, 0.788), 0 0 1px rgb(255, 255, 255);
+  }
+
+  .Form select{
+    display: inline-block;
+    border: none;
+    border-radius: 0.5rem;
+    height: 1.5rem;
+    margin: 0.5rem 0.2rem; /* Ajusta el margen según tu preferencia */
+    align-items: center;
+    width: 11rem;
+    background-color: rgba(105, 172, 230, 0.521);
+  }
+
+  .send{
+    width: 8rem;
+    height: 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: rgba(105, 172, 230, 0.733);
+    transition: scale 0.5s;
+  }
+
+  .send:hover{
+    background-color: rgba(20, 128, 223, 0.733);
+    scale: 1.2;
+  }
+
+  .height input{
+    width: 5rem;
+  }
+
+  .weight input{
+    width: 5rem;
+  }
+  .life_span input{
+    width: 5rem;
+  }
+
+  .error{
+    color: red;
+    font-size: 1rem;
+  }
+
+  .popup{
+        position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    background-color: rgba(109, 109, 109, 0.486);
+    border-radius: 2rem;
+    width: 35vw;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 0 10px rgba(228, 228, 228, 0.788), 0 0 1px rgb(255, 255, 255);
+    left: 33%;
+    color: aliceblue;
+  }
+
+.popup button{
+  background-color: rgba(94, 116, 156, 0.37);
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  transition: scale 0.5s;
+}
+
+.popup button:hover{
+  scale: 1.2;
+  background-color: rgba(14, 93, 240, 0.534);
+}
+
+.temps{
+  background-color: rgba(109, 109, 109, 0.486);
+  width: 11rem;
+  border-radius: 0.5rem;
+  height: relative ;
+  box-shadow: 0 0 10px rgba(228, 228, 228, 0.788), 0 0 1px rgb(255, 255, 255);
+}
+

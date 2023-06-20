@@ -5,6 +5,7 @@ const GetDogsName = require('../controllers/GetDogneme');
 const postDog = require('../controllers/postDog');
 const getTemperament = require('../controllers/GetTemperaments');
 const DeleteDog = require('../controllers/DeleteDog');
+const editDog = require('../controllers/Edithdog');
 
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
@@ -26,6 +27,8 @@ router.post('/dogs', postDog)
 router.get('/temperaments', getTemperament)
 
 router.delete('/dogs/:id', DeleteDog)
+
+router.put('/dogs/:id', editDog);
 
 
 

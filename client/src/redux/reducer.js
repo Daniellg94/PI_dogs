@@ -50,13 +50,13 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         getDogs: weDog.sort((a, b) => {
-          const weightA = parseInt(a.weight.split(" - ")[0]);
-          const weightB = parseInt(b.weight.split(" - ")[0]);
+          const weightA = parseInt(a.weight.metric.split(" - ")[0]);
+          const weightB = parseInt(b.weight.metric.split(" - ")[0]);
           return action.payload === "1" ? weightA - weightB : weightB - weightA;
         }),
         filterDogs: weFilt.sort((a, b) => {
-          const weightA = parseInt(a.weight?.split(" - ")[0]);
-          const weightB = parseInt(b.weight?.split(" - ")[0]);
+          const weightA = parseInt(a.weight?.metric.split(" - ")[0]);
+          const weightB = parseInt(b.weight?.metric.split(" - ")[0]);
           return action.payload === "1" ? weightA - weightB : weightB - weightA;
         }),
       };

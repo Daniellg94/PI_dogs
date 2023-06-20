@@ -1,24 +1,30 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { getTemp } from "../../redux/actions"
+import { detdogs, getTemp } from "../../redux/actions"
 import axios from "axios"
-import Validations from "./validations/validations"
-import { Link } from "react-router-dom"
-import styles from "./Form.module.css"
-import Home from "./Hause.png"
+import Validations from "../Form/validations/validations"
+import { Link, useParams } from "react-router-dom"
+import styles from "./Edith.module.css"
+import Home from "../Form/Hause.png"
 
-const Form = () => {
+const Edith = () => {
 
+    const {id} = useParams()
     const [showPopup, setShowPopup] = useState(false);
     const [popupContent, setPopupContent] = useState({
       title: '',
       message: '',
     });
     const temperaments = useSelector(state=>state.temperaments)
+    const dog = useSelector(state=>state.detDogs)
     const dispach = useDispatch()
     useEffect(()=>{
         dispach(getTemp())
       },[dispach])
+    
+      useEffect(() => {
+        dispach(detdogs(id));
+      }, [dispach, id]);
 
     const [newDog, setNewDog] = useState({
         name:"",
@@ -44,6 +50,53 @@ const Form = () => {
         image:""
     })
 
+    useEffect(() => {
+      if (dog.id) {
+        const { name, height, weight, life_span, temperament, image } = dog;
+    
+        // Obtener valores mínimos y máximos de height
+        const heightArr = height.metric.split(" - ");
+        const minheight = parseInt(heightArr[0]);
+        const maxheight = parseInt(heightArr[1]);
+    
+        // Obtener valores mínimos y máximos de weight
+        const weightArr = weight.metric.split(" - ");
+        const minweight = parseInt(weightArr[0]);
+        const maxweight = parseInt(weightArr[1]);
+    
+        // Obtener valores mínimos y máximos de life_span
+        const life_spanArr = life_span.split(" - ");
+        const minlife_span = parseInt(life_spanArr[0]);
+        const maxlife_span = parseInt(life_spanArr[1]);
+    
+        // Obtener el array de temperament
+        const temperamentArr = temperament.split(", ").map(tem => tem.trim());
+        const filteredTemperaments = temperaments.filter(tem => temperamentArr.includes(tem.name))
+    
+        setNewDog((prevState) => ({
+          ...prevState,
+          name,
+          height: {
+            metric: height.metric,
+            imperial: height.imperial,
+          },
+          minheight,
+          maxheight,
+          weight: {
+            metric: weight.metric,
+            imperial: weight.imperial,
+          },
+          minweight,
+          maxweight,
+          life_span,
+          minlife_span,
+          maxlife_span,
+          temperament: filteredTemperaments,
+          image,
+        }));
+      }
+    }, [dog, temperaments]);
+
 
     useEffect(() => {
         if (newDog.minheight && newDog.maxheight) {
@@ -68,12 +121,6 @@ const Form = () => {
             setNewDog((prevState) => ({
               ...prevState,
               life_span: life_span,
-            }));
-          }
-          if (!newDog.minheight && !newDog.maxheight) {
-            setNewDog((prevState) => ({
-              ...prevState,
-              height: "",
             }));
           }
       }, [newDog.minheight, newDog.maxheight, newDog.minweight, newDog.maxweight, newDog.minlife_span, newDog.maxlife_span]);
@@ -124,30 +171,30 @@ const Form = () => {
         )
     }
 
+    
     const removeTemperament = (event,temperament) => {
-      event.preventDefault()
-      setNewDog((prevState) => ({
-        ...prevState,
-        temperament: prevState.temperament.filter((tem) => tem !== temperament),
-      }));
-    }
+      event.preventDefault();
+        setNewDog((prevState) => ({
+          ...prevState,
+          temperament: prevState.temperament.filter((tem) => tem !== temperament),
+        }));
+      }
 
     
       const handlesumit = (event) => {
         event.preventDefault();
-        event.stopPropagation()
-    
-        const postdog = 'http://localhost:3001/dogs';
-    
+
+        const editDogUrl = `http://localhost:3001/dogs/${id}`; // Reemplaza dogId con el ID del perro que deseas editar
+      
         axios
-          .post(postdog, newDog)
+          .put(editDogUrl, newDog) // Envía una solicitud PUT en lugar de una solicitud POST
           .then((res) => {
             setPopupContent({
               title: 'Great',
-              message: 'the dog has been posted',
+              message: 'The dog has been edited',
             });
             setShowPopup(true);
-    
+      
             setNewDog({
               name: '',
               height: '',
@@ -166,7 +213,7 @@ const Form = () => {
           .catch((error) => {
             setPopupContent({
               title: 'Error',
-              message: 'the dog already exists ',
+              message: 'Failed to edit the dog',
             });
             setShowPopup(true);
           });
@@ -174,9 +221,6 @@ const Form = () => {
       
     return(
         <div>
-            <div className={styles.button}>
-                <Link to= "/dogs"><button><img src={Home} alt="" /></button></Link>
-            </div>
         <form onSubmit={handlesumit} className={styles.Form}>
             <label htmlFor="name">Dog name</label>
             <input type="text" name="name" placeholder="Dog name" value={newDog.name} onChange={handlerchange}/>
@@ -240,4 +284,4 @@ const Form = () => {
     )
 }
 
-export default Form
+export default Edith

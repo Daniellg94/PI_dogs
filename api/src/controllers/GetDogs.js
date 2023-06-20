@@ -24,8 +24,8 @@ const GetDogs = async(req,res) =>{
             id:dog.id,
             name:dog.name,
             image:dog.image?.url,
-            height:dog.height.metric,
-            weight:dog.weight.metric,
+            height:dog.height,
+            weight:dog.weight,
             life_span:dog.life_span,
             temperament:dog.temperament
         }

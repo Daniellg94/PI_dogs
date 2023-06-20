@@ -18,7 +18,7 @@ const Validations = (newDog) =>{
     ) {
       errors.height = "Max height should be greater than min height";
     }
-    if (newDog.weight.length === 0) {
+    if (!newDog.weight.metric) {
       errors.weight = "The form should have a weight";
     }
     if (

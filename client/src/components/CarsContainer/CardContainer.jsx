@@ -60,7 +60,7 @@ const CardContainer = () => {
                 key={dog.id}
                 id={dog.id}
                 name={dog.name}
-                weight={dog.weight}
+                weight={dog.weight.metric}
                 image={dog.image}
                 temperament={dog.temperament}
                 />

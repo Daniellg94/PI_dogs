@@ -14,10 +14,16 @@ const SearchBar = () =>{
         dispach(Searchdogs(search))
     }
 
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+          handledsearch();
+        }
+      };
+
     return(
         <div className={styles.search}>
-            <Link to="/dogs"><input type="search" value={search} onChange={(event)=> setSearch(event.target.value)} /></Link>
-            <button onClick={handledsearch}>search</button>
+            <input type="search" value={search} onChange={(event)=> setSearch(event.target.value) } onKeyDown={handleKeyDown} />
+            <Link to="/dogs"><button onClick={handledsearch}>search</button></Link>
         </div>
     )
 }
