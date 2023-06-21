@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from "react-redux"
 import { detdogs, getTemp } from "../../redux/actions"
 import axios from "axios"
 import Validations from "../Form/validations/validations"
-import { Link, useParams } from "react-router-dom"
+import {useParams } from "react-router-dom"
 import styles from "./Edith.module.css"
-import Home from "../Form/Hause.png"
+
 
 const Edith = () => {
 
