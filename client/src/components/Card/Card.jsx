@@ -12,7 +12,7 @@ const Card = (props) => {
     const hablderDelete = async (event) => {
         const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
         if (uuidRegex.test(event.target.value)) {
-          const deleted = await axios.delete(`http://localhost:3001/dogs/${event.target.value}`);
+          const deleted = await axios.delete(`https://pi-dogs-daniel.netlify.app/dogs/${event.target.value}`);
           dispach(deleter(event.target.value));
         } else {
           alert("Este perro no pertenece a la base de datos");

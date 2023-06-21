@@ -137,7 +137,7 @@ const Form = () => {
         event.preventDefault();
         event.stopPropagation()
     
-        const postdog = 'http://localhost:3001/dogs';
+        const postdog = 'https://pi-dogs-daniel.netlify.app/dogs';
     
         axios
           .post(postdog, newDog)
