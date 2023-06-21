@@ -5,7 +5,7 @@ const GetDogsName = require('../controllers/GetDogneme.js');
 const postDog = require('../controllers/postDog.js');
 const getTemperament = require('../controllers/GetTemperaments.js');
 const DeleteDog = require('../controllers/DeleteDog.js');
-const editDog = require('../controllers/Edithdog.js');
+const editDog = require('../controllers/EdithDog.js');
 
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
