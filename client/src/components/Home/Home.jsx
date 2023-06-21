@@ -38,7 +38,7 @@ const Home = () => {
       
       <div className={styles.home}>
         <div className={styles.buttons}>
-        <select name="temperaments" value={temperaments.map(temp=>temp.name)} onChange={hablderfilter}>
+        <select name="temperaments" onChange={hablderfilter}>
         <option value="">temperaments</option>
         {temperaments.map((temp)=>(
           <option key={temp.id} value={temp.name}>{temp.name}</option>
@@ -49,7 +49,7 @@ const Home = () => {
         <button onClick={handlerweight} value = "10">weight up</button>
         <button onClick={handlerweight} value = "1">weight down</button>
         <button onClick={hablderApi} value="6e8bc430-9c3a-11d9-9669-0800200c9a66">DB Dogs</button>
-        <button onClick={hablderApi} value="123">DB Dogs</button>
+        <button onClick={hablderApi} value="123">API Dogs</button>
         </div>
         <div className={styles.cards}>
         <CardContainer/>
