@@ -184,7 +184,7 @@ const Edith = () => {
       const handlesumit = (event) => {
         event.preventDefault();
 
-        const editDogUrl = `https://pi-dogs-daniel.netlify.app/dogs/${id}`; // Reemplaza dogId con el ID del perro que deseas editar
+        const editDogUrl = `https://daniel-pi-dogs.onrender.com/dogs/${id}`; // Reemplaza dogId con el ID del perro que deseas editar
       
         axios
           .put(editDogUrl, newDog) // Envía una solicitud PUT en lugar de una solicitud POST

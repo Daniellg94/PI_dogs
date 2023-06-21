@@ -1,7 +1,7 @@
 import { DELETE, DETDOGS, FILT_API, FILT_DOGS, GETDOGS, GET_TEMP, ORDER_DOG, ORDER_WE, SEARCH_DOG } from "./actions_type"
 import axios from "axios"
 
-const URL = "https://pi-dogs-daniel.netlify.app/dogs"
+const URL = "https://daniel-pi-dogs.onrender.com/dogs"
 
 let variable = true
 
@@ -63,7 +63,7 @@ export const Searchdogs = (name) => {
 export const getTemp = () => {
 
     return async(dispatch) =>{
-        const temps = await axios (`https://pi-dogs-daniel.netlify.app/temperaments`)
+        const temps = await axios (`https://daniel-pi-dogs.onrender.com/temperaments`)
         const data= temps.data
         return dispatch(
             {

@@ -137,7 +137,7 @@ const Form = () => {
         event.preventDefault();
         event.stopPropagation()
     
-        const postdog = 'https://pi-dogs-daniel.netlify.app/dogs';
+        const postdog = 'https://daniel-pi-dogs.onrender.com/dogs';
     
         axios
           .post(postdog, newDog)
