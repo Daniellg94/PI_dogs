@@ -7,7 +7,7 @@ import Form from './components/Form/Form';
 import Nav from './components/Nav/Nav';
 import ButtonTM from './components/buttonTM/ButtonTM';
 import Edith from './components/Edith/Edith';
-import AudioPlayer from './components/Audio/AudioPlayer';
+//import AudioPlayer from './components/Audio/AudioPlayer';
 
 function App() {
 
