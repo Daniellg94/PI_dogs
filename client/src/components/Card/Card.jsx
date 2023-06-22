@@ -8,11 +8,10 @@ import { deleter } from "../../redux/actions"
 const Card = (props) => {
 
     const dispach = useDispatch()
-    
-    const hablderDelete = async (event) => {
-        const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+    const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+    const hablderDelete = async (event) => {     
         if (uuidRegex.test(event.target.value)) {
-          const deleted = await axios.delete(`https://daniel-pi-dogs.onrender.com/${event.target.value}`);
+          const deleted = await axios.delete(`https://daniel-pi-dogs.onrender.com/dogs/${event.target.value}`);
           dispach(deleter(event.target.value));
         } else {
           alert("Este perro no pertenece a la base de datos");
@@ -21,7 +20,7 @@ const Card = (props) => {
 
     return(
         <div className={styles.card}>
-        <button value={props.id} onClick={hablderDelete}>x</button>
+        {uuidRegex.test(props.id)&&<button value={props.id} onClick={hablderDelete}>x</button>}
         <Link to ={`/dog/${props.id}`}>
         <p><img src={props.image} alt=""/></p>
         <footer>
